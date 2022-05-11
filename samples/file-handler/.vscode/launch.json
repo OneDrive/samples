@@ -1,0 +1,60 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "edge",
+      "request": "launch",
+      "name": "Next: Edge",
+      "url": "https://{tenant}.sharepoint.com/sites/dev/Shared Documents/Forms/AllItems.aspx",
+      "userDataDir": "C:/Users/patrodg/AppData/Local/Microsoft/Edge Dev/User Data/Profile 1",
+      "runtimeExecutable": "C:/Program Files (x86)/Microsoft/Edge Dev/Application/msedge.exe",
+      "runtimeArgs": [
+        "--remote-debugging-port=9222",
+      ],
+      "port": 9222
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Next: Node",
+      "protocol": "inspector",
+      "args": [
+        "${workspaceFolder}/src/dev-server/server.js"
+      ],
+      "console": "integratedTerminal",
+      "outFiles": [
+        "${workspaceFolder}/.next/server/**/*.*"
+      ],
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "sourceMaps": true
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug: local-setup",
+      "preLaunchTask": "build-local-setup",
+      "args": [
+        "${workspaceFolder}/tools/local-setup/bin/localsetup"
+      ],
+      "console": "externalTerminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "env": {
+        "INIT_CWD": "${workspaceFolder}"
+      },
+      "sourceMaps": true
+    },
+  ],
+  "compounds": [
+    {
+      "name": "Next: Full",
+      "configurations": [
+        "Next: Edge",
+        "Next: Node"
+      ]
+    }
+  ]
+}

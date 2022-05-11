@@ -1,0 +1,15 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "AzureAd:Instance": "https://login.microsoftonline.com/",
+    "AzureAd:TenantId": "organizations",
+    "AzureAd:ClientId": "[OneDriveFilesDemo clientid]",
+    "AzureAd:ClientSecret": "[OneDriveFilesDemo secret]",
+    "ConnectionStrings:DefaultConnection": "<SQL Server connection string>",
+    "Files:SubscriptionService": "https://[ngrokhost].ngrok.io/api/FilesSubscription",
+    "Files:SubscriptionLifeTime": 15,
+    "Files:MsalCacheLifeTime": 0
+  }
+}

@@ -1,0 +1,37 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "commonjs",
+        "declaration": true,
+        "declarationMap": true,
+        "removeComments": false,
+        "allowJs": true,
+        "lib": [
+            "ES2015",
+            "dom",
+            "ES2017.Object",
+        ],
+        "baseUrl": ".",
+        "rootDir": ".",
+        "outDir": "./build",
+        "allowUnreachableCode": true,
+        "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "node",
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "pretty": true,
+        "experimentalDecorators": true,
+        "noFallthroughCasesInSwitch": true,
+        "sourceMap": true,
+        "skipDefaultLibCheck": true,
+        "downlevelIteration": true,
+        "skipLibCheck": true,
+        "strictNullChecks": false,
+        "preserveConstEnums": true,
+        "importHelpers": true,
+        "resolveJsonModule": true,
+    },
+    "include": [
+        "./**/*.ts",
+    ]
+}

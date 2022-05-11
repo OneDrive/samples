@@ -1,0 +1,29 @@
+{
+  "name": "local-setup",
+  "private": true,
+  "version": "0.0.1",
+  "bin": {
+    "localsetup": "./bin/localsetup.js"
+  },
+  "description": "Provides setup functionality for local development of file handlers",
+  "main": "index",
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "npm run build",
+    "clean": "del-cli \"./!(node_modules)/**/*.?(js|js.map|d.ts|d.ts.map)\" \"./*.?(js|js.map|d.ts|d.ts.map)\""
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@azure/msal-node": "^1.0.0-alpha.8",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.5.7",
+    "@types/uuid": "^8.3.0",
+    "del-cli": "^3.0.1",
+    "uuid": "^8.3.0",
+    "typescript": "^4.0.3"
+  }
+}

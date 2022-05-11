@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "contoso-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/contoso/ContosoCommandSet.js",
+          "manifest": "./src/extensions/contoso/ContosoCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ContosoCommandSetStrings": "lib/extensions/contoso/loc/{locale}.js"
+  }
+}

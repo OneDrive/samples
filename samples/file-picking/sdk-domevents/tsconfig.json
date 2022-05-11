@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "target": "ES2021",
+        "module": "es2020",
+        "declaration": true,
+        "removeComments": false,
+        "lib": [
+            "ES2015",
+            "dom",
+            "ES2017.Object",
+        ],
+        "baseUrl": "./src",
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "node",
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "pretty": true,
+        "experimentalDecorators": true,
+        "noFallthroughCasesInSwitch": true,
+        "sourceMap": true,
+        "skipDefaultLibCheck": true,
+        "skipLibCheck": true,
+        "strictNullChecks": false,
+        "preserveConstEnums": true,
+        "importHelpers": true,
+    },
+    "include": [
+        "./src/**/*.ts",
+    ]
+}

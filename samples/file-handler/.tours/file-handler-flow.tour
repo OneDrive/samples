@@ -1,0 +1,45 @@
+{
+  "title": "File Handler Flow",
+  "steps": [
+    {
+      "file": "src/pages/markdown/[action].tsx",
+      "line": 47,
+      "description": "The request starts when a POST is done to the file handler from SharePoint or one drive. The auth flow is followed (see auth flow code tour) and we get a token stored in the session."
+    },
+    {
+      "file": "src/pages/markdown/[action].tsx",
+      "line": 63,
+      "description": "We load the content and include that in the activation params we provide to the page handler."
+    },
+    {
+      "file": "src/pages/markdown/[action].tsx",
+      "line": 94,
+      "description": "We setup our state hooks and get the action from the query, this comes from the URL path and a feature of Nextjs."
+    },
+    {
+      "file": "src/pages/markdown/[action].tsx",
+      "line": 192,
+      "description": "We render our page to allow create/edit functionality of the file, using an iframe to isolate the preview content and a debounce function to avoid re-rendering on each keypress."
+    },
+    {
+      "file": "src/pages/markdown/[action].tsx",
+      "line": 123,
+      "description": "On save we call our local api with the edited content from the page and information from the activation params."
+    },
+    {
+      "file": "src/pages/api/filehandler/[action].ts",
+      "line": 53,
+      "description": "We get our token from the session stored during the intial auth flow, do some sanity checks on the data passed to the method, and persist the content back to the server. To do this we need to first query some information from Microsoft Graph so we can correctly construct our update url."
+    },
+    {
+      "file": "src/pages/api/filehandler/[action].ts",
+      "line": 100,
+      "description": "Save worked, we return a 200 success to the calling page."
+    },
+    {
+      "file": "src/pages/markdown/[action].tsx",
+      "line": 137,
+      "description": "If our save worked we handle our UI updates and close the window if that was the option selected."
+    }
+  ]
+}

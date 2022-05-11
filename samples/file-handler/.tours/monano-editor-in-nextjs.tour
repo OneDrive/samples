@@ -1,0 +1,55 @@
+{
+  "title": "Monano Editor in Nextjs",
+  "steps": [
+    {
+      "file": "package.json",
+      "line": 29,
+      "description": "We include \"react-monaco-editor\" and"
+    },
+    {
+      "file": "package.json",
+      "line": 40,
+      "description": "the \"monaco-editor-webpack-plugin\" libraries."
+    },
+    {
+      "file": "next.config.js",
+      "line": 22,
+      "description": "We setup the webpack plugin in our next.config.js file. Note the addition of the \"static/\" path in the filename. This is required based on how Nextjs builds things."
+    },
+    {
+      "file": "src/components/monaco-editor.tsx",
+      "line": 6,
+      "description": "We need to use the dynamic import function from next/dynamic with the ssr: false setting to ensure the editor control is only rendered on the client as internally it references browser only features."
+    },
+    {
+      "file": "src/components/monaco-editor.tsx",
+      "line": 15,
+      "description": "We need to adjust the worker urls to include the _next/static in the path to work with how Nextjs builds the solution. We do that using the \"getWorkerUrl\" method. Note we reference window, another example of this needing to run only on the client."
+    },
+    {
+      "file": "src/components/monaco-editor.tsx",
+      "line": 29,
+      "description": "Finally we export a thinly wrapped version to ensure we include our required editorDidMount function. Everything else is simply passed to the Monaco control."
+    },
+    {
+      "file": "src/pages/markdown/[action].tsx",
+      "line": 12,
+      "description": "Because we handle the dynamic import within the component we can directly import our thin wrapper on our page."
+    },
+    {
+      "file": "src/pages/markdown/[action].tsx",
+      "line": 229,
+      "description": "We add our component into the page using the normal manner, passing all of the properties we need."
+    },
+    {
+      "file": "src/pages/markdown/[action].tsx",
+      "line": 90,
+      "description": "On any content change we update our state using the hook."
+    },
+    {
+      "file": "src/pages/markdown/[action].tsx",
+      "line": 181,
+      "description": "And to ensure we aren't processing the markdown on every change we use a hook \"useDebounce\" to limit the updates seen by the MarkdownPreview component."
+    }
+  ]
+}

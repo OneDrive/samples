@@ -1,0 +1,70 @@
+{
+  "title": "File Handler Auth Flow",
+  "steps": [
+    {
+      "file": "src/pages/markdown/[action].tsx",
+      "line": 47,
+      "description": "The auth flow started when the initial POST request from SharePoint or OneDrive arrives at our handler. In our Nextjs [getServerSidePropsHandler](https://nextjs.org/docs/basic-features/data-fetching#getserversideprops-server-side-rendering) we invoke our initHandler method.",
+      "selection": {
+        "start": {
+          "line": 45,
+          "character": 7
+        },
+        "end": {
+          "line": 45,
+          "character": 32
+        }
+      }
+    },
+    {
+      "file": "src/lib/initHandler.ts",
+      "line": 74,
+      "description": "We first parse our query and we will use the data it contains to decide what to do."
+    },
+    {
+      "file": "src/lib/initHandler.ts",
+      "line": 76,
+      "description": "If the query has a token we have already done the auth flow, and need to setup our session to hold the token. You could add the full activation params to the session, along with anything else - but for this sample we just store the token and its expiration."
+    },
+    {
+      "file": "src/lib/initHandler.ts",
+      "line": 92,
+      "description": "We set and save the session data using [IronSession](https://github.com/vvo/next-iron-session).  You can substiture your session manager of choice, the flow we have used will stay generally the same."
+    },
+    {
+      "file": "src/lib/initHandler.ts",
+      "line": 94,
+      "description": "And we return what the page will use to continue processing the request."
+    },
+    {
+      "file": "src/lib/initHandler.ts",
+      "line": 103,
+      "description": "Here we know that we are unauthenticated, so we start the flow here."
+    },
+    {
+      "file": "src/lib/initHandler.ts",
+      "line": 105,
+      "description": "We parse the activation params into an structure. They start out in the POST body format application/x-www-form-urlencoded and we split and reduce those pairs"
+    },
+    {
+      "file": "src/lib/initHandler.ts",
+      "line": 116,
+      "description": "We use msal to get the auth code url where we will redirect the user to sign-in. By including the loginHint and domainHint SSO should work for most users. Also note the redirect uri will return the user to the api \"page\" in our application to handle the returned token."
+    },
+    {
+      "file": "src/pages/api/auth/[action].ts",
+      "line": 46,
+      "description": "Because we are using the code auth flow we now need to use the code returned from the user's signin to get a token we will use to make our requests. Once we have that we redirect to the page that originally brought us to the login api, which we stored in the state we sent to the login service."
+    },
+    {
+      "file": "src/lib/initHandler.ts",
+      "line": 85,
+      "description": "We return here from the login api with a token we set in the session and return."
+    },
+    {
+      "file": "src/pages/markdown/[action].tsx",
+      "line": 56,
+      "description": "And now that we have a token we can make our request for the file content using the url provided in the activation params."
+    }
+  ]
+}

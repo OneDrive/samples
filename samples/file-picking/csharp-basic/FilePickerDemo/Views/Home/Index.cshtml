@@ -1,0 +1,230 @@
+﻿@using FilePickerDemo.Models.File
+@using System.Web
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor Context
+
+@{
+    ViewData["Title"] = "File picker";
+}
+
+<head>
+    <script src="~/js/filepicker.js" asp-append-version="true"></script>
+</head>
+
+<div class="text-center">
+    @{
+        string siteUrl = Configuration["Picker:SiteUrl"];
+        string host = Context.HttpContext.Request.IsHttps ? $"https://{Context.HttpContext.Request.Host.Value}" : $"http://{Context.HttpContext.Request.Host.Value}";
+
+        FilePickerOptions filePickerOptions = new FilePickerOptions()
+        {
+            Entry = new EntryConfiguration()
+            {
+                //SharePoint = new SharePointEntryConfiguration()
+                //{
+                //    ByPath = new SharePointEntryConfigurationByPath()
+                //    {
+                //        //Web = "/sites/prov-1/sub2",
+                //        List = "Shared Documents",
+                //        //Folder = "Channel 1"
+                //    },
+                //},
+                OneDrive = new OneDriveEntryConfiguration()
+                {
+                    //Files = new FilesOneDriveEntryConfiguration()
+                    //{                            
+                    //    Folder = "/personal/bert_jansen_bertonline_onmicrosoft_com/Documents/Apps"
+                    //}
+                },
+            },
+
+            TypesAndSources = new TypesAndSourcesConfiguration()
+            {
+                // SelectionType modes work
+                Mode = SelectionType.files,
+
+                //Filters = new List<string>()
+                //{
+                //    ".pptx", ".jpg"
+                //},
+
+                Pivots = new SelectionPivots()
+                {
+                    OneDrive = true,
+                    Recent = true,
+                }
+            },
+
+            //Commands = new PickerCommandConfiguration()
+            //{
+            //    Pick = new PickCommandConfiguration()
+            //    {
+            //        Label = "Yo!"
+            //    },
+            //    Close = new CloseCommandConfiguration()
+            //    {
+            //        Label = "Done!"
+            //    }
+            //},
+
+            //Selection = new SelectionConfiguration()
+            //{
+            //    // Multiple, Single and Pick modes work
+            //    Mode = SelectionMode.pick,
+            //},
+
+            Authentication = new AuthenticationConfiguration(),
+
+            Messaging = new MessagingConfiguration(origin:$"{host}", channelId:"15"),
+
+            //Theme = new Theme()
+            //{
+            //    Palette = new Palette()
+            //    {
+            //        ThemePrimary = "#d40019",
+            //        ThemeLighterAlt = "#fdf3f4",
+            //        ThemeLighter = "#f8d0d5",
+            //        ThemeLight = "#f2a9b2",
+            //        ThemeTertiary = "#e55c6c",
+            //        ThemeSecondary = "#d91a30",
+            //        ThemeDarkAlt = "#be0016",
+            //        ThemeDark = "#a10013",
+            //        ThemeDarker = "#77000e",
+            //        NeutralLighterAlt = "#2bacc9",
+            //        NeutralLighter = "#32afcc",
+            //        NeutralLight = "#3eb4cf",
+            //        NeutralQuaternaryAlt = "#45b8d1",
+            //        NeutralQuaternary = "#4bbad3",
+            //        NeutralTertiaryAlt = "#66c5da",
+            //        NeutralTertiary = "#100f0f",
+            //        NeutralSecondary = "#151414",
+            //        NeutralPrimaryAlt = "#1a1919",
+            //        NeutralPrimary = "#2e2d2d",
+            //        NeutralDark = "#242323",
+            //        Black = "#292828",
+            //        White = "#24a9c7",
+            //    }
+            //}
+        };
+
+        var serializerOptions = new System.Text.Json.JsonSerializerOptions
+        {
+            Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() },
+            WriteIndented = false,
+            DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+            PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase,
+        };
+
+        string jsonFilePickerSettings = HttpUtility.UrlEncode(System.Text.Json.JsonSerializer.Serialize<FilePickerOptions>(filePickerOptions, serializerOptions));
+
+    }
+
+    <div class="row">
+        <div class="col-md-12 text-left">
+            <h2>File Picker demo</h2>
+
+            <a class="btn btn-primary" data-toggle="modal" data-target="#filePickerModal">Pick a file</a>
+
+            <div id="filePickerModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <form id="filePickerForm" target="filePickerIframe" action="@siteUrl/_layouts/15/FilePicker.aspx?app=MyApp&scenario=MyAppFiles&filePicker=@jsonFilePickerSettings" method="post">
+                        </form>
+
+                        <iframe id="filePicker"
+                                name="filePickerIframe"
+                                src="#"
+                                width="1000"
+                                height="800"
+                                frameborder="0">
+                        </iframe>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 text-left">
+            <div id="messageLevel0" class="message-text-primary"></div>
+            <div id="messageLevel1" class="message-text"></div>
+            <div id="messageLevel2" class="message-text"></div>
+        </div>
+        <div class="col-md-6 text-left">
+            @{
+                var serializerOptionsForDisplay = new System.Text.Json.JsonSerializerOptions
+                {
+                    Converters = { new System.Text.Json.Serialization.JsonStringEnumConverter() },
+                    WriteIndented = true,
+                    DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+                    PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase,
+                };
+
+                string jsonFilePickerSettingsForDisplay = System.Text.Json.JsonSerializer.Serialize<FilePickerOptions>(filePickerOptions, serializerOptionsForDisplay);
+            }
+            <pre><code>@jsonFilePickerSettingsForDisplay.Trim()</code></pre>
+        </div>
+    </div>
+
+    <br />
+    <div class="row">
+        <div class="col-md-12 justify-content-center">
+            <img id="selectedThumbnailImg" />
+        </div>
+    </div>
+    <br />
+
+</div>
+
+@section Scripts
+{
+    <script>
+        var pageInitialized = false;
+
+        // Calls the GetAccessToken method on the server
+        const getAccessToken = (resource) => {
+            return new Promise(function (resolve, reject) {
+                $.ajax({
+                    url: '@Url.Action("GetPickerAccessToken", "Home")',
+                    type: 'GET',
+                    cache: false,
+                    success: function (accessToken) { return resolve(accessToken) },
+                    error: function (error) { return reject(error) }
+                });
+            });
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            if (pageInitialized) return;
+            pageInitialized = true;
+
+            var url = new URL('@siteUrl').origin;
+            console.log('first url:' + url);
+            getAccessToken(url).then(function (result) {
+
+                const input = document.createElement('input');
+                input.setAttribute('type', 'hidden')
+                input.setAttribute('name', 'access_token');
+                input.setAttribute('value', result);
+
+                document.getElementById('filePickerForm').appendChild(input);
+                document.getElementById('filePickerForm').submit();
+
+                // Set post back url for future use
+                filePicker.init('@Url.Action("Index", "Home")', '#filePickerModal', '#messageLevel', getAccessToken);
+
+            }, function (err) {
+                console.log(err);
+            });
+
+        });
+
+
+    </script>
+}
+
+

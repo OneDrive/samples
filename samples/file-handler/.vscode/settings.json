@@ -1,0 +1,21 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/node_modules": true,
+        "coverage": true,
+        ".nyc_output": true,
+        "**/.next": true,
+    },
+    "typescript.validate.enable": true,
+    "typescript.tsdk": "./node_modules/typescript/lib",
+    "editor.tabSize": 4,
+    "debug.javascript.warnOnLongPrediction": false,
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/04902f89-223d-4627-a142-75fc0bd677a7/resourceGroups/file-handler-demo-resource-group/providers/Microsoft.Web/sites/filehandlerdemo",
+    "appService.deploySubpath": ".",
+}

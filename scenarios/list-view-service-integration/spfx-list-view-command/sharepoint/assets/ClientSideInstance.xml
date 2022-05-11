@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="Contoso"
+        Location="ClientSideExtension.ListViewCommandSet.CommandBar"
+        ListTemplateId="101"
+        Properties="{&quot;apiAbsUrl&quot;:&quot;https://{app-name}.azurewebsites.net&quot;,&quot;appId&quot;:&quot;{app-id}&quot;}"
+        ComponentId="810e5d77-d418-4386-b67a-c3291d0bd673" />
+</Elements>
