@@ -33,7 +33,7 @@ The following schema shows the scenario realized by this sample:
 
 ### Pre-requisites
 
-This application was developed using [Visual Studio 2019](https://visualstudio.microsoft.com/) using .NET Core 3.1. To support local debugging it's recommended to use [ngrok](https://ngrok.com/) as tunneling application that can route subscription calls to localhost. Using [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) is recommended for configuring the needed SQL database.
+This application was developed using [Visual Studio 2019](https://visualstudio.microsoft.com/) using .NET Core 3.1. To support local debugging it's recommended to use [ngrok](https://ngrok.com/) as tunneling application that can route subscription calls to localhost. Using [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) is recommended for configuring the needed SQL database.
 
 ### Registering the Azure AD application
 
@@ -90,7 +90,7 @@ Next register the OneDriveFilesDemo application:
 
 ### Configuring (Azure) SQL server
 
-The sample needs a SQL database to store the MSAL token cache and application data. Create a database with name `IntegratedTokenCache` using either the SQL Azure management pages or [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) and then run the `IntegratedTokenCache.sql` script to add the needed tables to the database.
+The sample needs a SQL database to store the MSAL token cache and application data. Create a database with name `IntegratedTokenCache` using either the SQL Azure management pages or [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) and then run the `IntegratedTokenCache.sql` script to add the needed tables to the database.
 
 ### Updating the configuration files
 
@@ -121,9 +121,9 @@ To now start the sample press F5.
 This sample was inspired by other samples, documentation, blogs are more. Here are some of the key resources used while building the sample:
 
 - Identity advocates for Microsoft's Identity Division: https://dev.to/425show
-- Azure AD code sample overview: https://docs.microsoft.com/en-us/azure/active-directory/develop/sample-v2-code#multi-tenant-saas-applications
-- Using Microsoft Graph with personal accounts: https://docs.microsoft.com/en-us/samples/azure-samples/active-directory-dotnet-native-aspnetcore-v2/3-web-api-call-microsoft-graph-for-personal-accounts/
+- Azure AD code sample overview: https://docs.microsoft.com/azure/active-directory/develop/sample-v2-code#multi-tenant-saas-applications
+- Using Microsoft Graph with personal accounts: https://docs.microsoft.com/samples/azure-samples/active-directory-dotnet-native-aspnetcore-v2/3-web-api-call-microsoft-graph-for-personal-accounts/
 - Custom token cache handling using MSAL: https://github.com/Azure-Samples/ms-identity-dotnet-advanced-token-cache/tree/master/1-Integrated-Cache/1-2-WebAPI-BgWorker
-- Upload files via Microsoft Graph SDK: https://docs.microsoft.com/en-us/graph/sdks/large-file-upload?tabs=csharp
-- Building a Microsoft Graph subscription service using Azure Functions: https://docs.microsoft.com/en-us/graph/tutorials/azure-functions?tutorial-step=4
-- Track changes on files via Graph Delta queries: https://docs.microsoft.com/en-us/graph/api/driveitem-delta?view=graph-rest-1.0&tabs=csharp
+- Upload files via Microsoft Graph SDK: https://docs.microsoft.com/graph/sdks/large-file-upload?tabs=csharp
+- Building a Microsoft Graph subscription service using Azure Functions: https://docs.microsoft.com/graph/tutorials/azure-functions?tutorial-step=4
+- Track changes on files via Graph Delta queries: https://docs.microsoft.com/graph/api/driveitem-delta?view=graph-rest-1.0&tabs=csharp

@@ -31,13 +31,13 @@
             {
                 "type": "image",
                 "order": 100,
-                "url": "onedrive-samples-filehandler-editor.png",
+                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/samples-filehandler-editor.png",
                 "alt": "File Handler Editor Display"
             },
             {
                 "type": "image",
                 "order": 101,
-                "url": "onedrive-samples-filehandler-menu.png",
+                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/samples-filehandler-menu.png",
                 "alt": "File Handler in UI menu"
             }
         ],
@@ -61,7 +61,7 @@
     {
         "name": "onedrive-samples-filepicking-csharp-basic",
         "source": "Microsoft",
-        "title": "OneDrive v8 File Picker: C#",
+        "title": "OneDrive File Picker: C#",
         "shortDescription": "This sample shows the file picking and file browsing controls using an .NET 6.0 ASP.NET Core application. For getting access tokens a call to the ASP.NET Core server is made.",
         "url": "https://github.com/OneDrive/samples/tree/master/samples/file-picking/csharp-basic",
         "longDescription": [
@@ -78,10 +78,6 @@
             {
                 "key": "GRAPH-APIS",
                 "value": "files"
-            },
-            {
-                "key": "CLIENT-SIDE-DEV",
-                "value": "TypeScript"
             }
         ],
         "tags": [],
@@ -90,14 +86,8 @@
             {
                 "type": "image",
                 "order": 100,
-                "url": "onedrive-samples-filehandler-editor.png",
-                "alt": "File Handler Editor Display"
-            },
-            {
-                "type": "image",
-                "order": 101,
-                "url": "onedrive-samples-filehandler-menu.png",
-                "alt": "File Handler in UI menu"
+                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/samples-filepicking-picker.png",
+                "alt": "File Picker Window"
             }
         ],
         "authors": [
@@ -116,5 +106,289 @@
                 "url": "https://docs.microsoft.com/onedrive/developer/controls/file-pickers?WT.mc_id=m365-15741-cxa"
             }
         ]
+    },
+    {
+        "name": "onedrive-samples-filepicking-javascript-basic",
+        "source": "Microsoft",
+        "title": "OneDrive File Picker: JavaScript",
+        "shortDescription": "A single page example showing full interaction with the picker through plain JavaScript on a single page with no external dependencies.",
+        "url": "https://github.com/OneDrive/samples/tree/master/samples/file-picking/javascript-basic",
+        "longDescription": [
+            "A single page example showing full interaction with the picker through plain JavaScript on a single page with no external dependencies."
+        ],
+        "creationDateTime": "2022-05-11",
+        "updateDateTime": "2022-05-11",
+        "products": [
+            "SharePoint",
+            "OneDrive",
+            "Microsoft Graph"
+        ],
+        "metadata": [
+            {
+                "key": "GRAPH-APIS",
+                "value": "files"
+            }
+        ],
+        "tags": [],
+        "categories": [],
+        "thumbnails": [
+            {
+                "type": "image",
+                "order": 100,
+                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/samples-filepicking-picker.png",
+                "alt": "File Picker Window"
+            }
+        ],
+        "authors": [
+            {
+                "gitHubAccount": "patrick-rodgers",
+                "company": "Microsoft",
+                "pictureUrl": "https://avatars.githubusercontent.com/u/13154702?s=460\u0026v=4",
+                "name": "Patrick Rodgers",
+                "twitter": "mediocrebowler"
+            }
+        ],
+        "references": [
+            {
+                "name": "Overview of File Picker",
+                "description": "The latest version of the file picker allows you to integrate using the same capabilities we use within the service.",
+                "url": "https://docs.microsoft.com/onedrive/developer/controls/file-pickers?WT.mc_id=m365-15741-cxa"
+            }
+        ]
+    },
+    {
+        "name": "onedrive-samples-filepicking-typescript-react",
+        "source": "Microsoft",
+        "title": "OneDrive File Picker: React",
+        "shortDescription": "Demonstrates integrating the file picker within a React project, as well as how to act on the picked file information.",
+        "url": "https://github.com/OneDrive/samples/tree/master/samples/file-picking/typescript-react",
+        "longDescription": [
+            "Demonstrates integrating the file picker within a React project, as well as how to act on the picked file information."
+        ],
+        "creationDateTime": "2022-05-11",
+        "updateDateTime": "2022-05-11",
+        "products": [
+            "SharePoint",
+            "OneDrive",
+            "Microsoft Graph"
+        ],
+        "metadata": [
+            {
+                "key": "GRAPH-APIS",
+                "value": "files"
+            },
+            {
+                "key": "CLIENT-SIDE-DEV",
+                "value": "React"
+            }
+        ],
+        "tags": [],
+        "categories": [],
+        "thumbnails": [
+            {
+                "type": "image",
+                "order": 100,
+                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/samples-filepicking-picker.png",
+                "alt": "File Picker Window"
+            }
+        ],
+        "authors": [
+            {
+                "gitHubAccount": "patrick-rodgers",
+                "company": "Microsoft",
+                "pictureUrl": "https://avatars.githubusercontent.com/u/13154702?s=460\u0026v=4",
+                "name": "Patrick Rodgers",
+                "twitter": "mediocrebowler"
+            }
+        ],
+        "references": [
+            {
+                "name": "Overview of File Picker",
+                "description": "The latest version of the file picker allows you to integrate using the same capabilities we use within the service.",
+                "url": "https://docs.microsoft.com/onedrive/developer/controls/file-pickers?WT.mc_id=m365-15741-cxa"
+            }
+        ]
+    },
+    {
+        "name": "onedrive-samples-filepicking-typescript-sdk",
+        "source": "Microsoft",
+        "title": "OneDrive File Picker: TypeScript",
+        "shortDescription": "This sample shows how to work with the picker and an example SDK",
+        "url": "https://github.com/OneDrive/samples/tree/master/samples/file-picking/typescript-sdk",
+        "longDescription": [
+            "This sample shows how to work with the picker and an example SDK"
+        ],
+        "creationDateTime": "2022-05-11",
+        "updateDateTime": "2022-05-11",
+        "products": [
+            "SharePoint",
+            "OneDrive",
+            "Microsoft Graph"
+        ],
+        "metadata": [
+            {
+                "key": "GRAPH-APIS",
+                "value": "files"
+            }
+        ],
+        "tags": [],
+        "categories": [],
+        "thumbnails": [
+            {
+                "type": "image",
+                "order": 100,
+                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/samples-filepicking-picker.png",
+                "alt": "File Picker Window"
+            }
+        ],
+        "authors": [
+            {
+                "gitHubAccount": "patrick-rodgers",
+                "company": "Microsoft",
+                "pictureUrl": "https://avatars.githubusercontent.com/u/13154702?s=460\u0026v=4",
+                "name": "Patrick Rodgers",
+                "twitter": "mediocrebowler"
+            }
+        ],
+        "references": [
+            {
+                "name": "Overview of File Picker",
+                "description": "The latest version of the file picker allows you to integrate using the same capabilities we use within the service.",
+                "url": "https://docs.microsoft.com/onedrive/developer/controls/file-pickers?WT.mc_id=m365-15741-cxa"
+            }
+        ]
+    },
+    {
+        "name": "onedrive-samples-filepicking-typescript-sdk-odc",
+        "source": "Microsoft",
+        "title": "OneDrive File Picker: OneDrive Consumer",
+        "shortDescription": "This sample shows how to work with the picker and an example SDK to call OneDrive Consumer",
+        "url": "https://github.com/OneDrive/samples/tree/master/samples/file-picking/typescript-sdk-odc",
+        "longDescription": [
+            "This sample shows how to work with the picker and an example SDK to call OneDrive Consumer"
+        ],
+        "creationDateTime": "2022-05-11",
+        "updateDateTime": "2022-05-11",
+        "products": [
+            "SharePoint",
+            "OneDrive",
+            "Microsoft Graph"
+        ],
+        "metadata": [
+            {
+                "key": "GRAPH-APIS",
+                "value": "files"
+            }
+        ],
+        "tags": [],
+        "categories": [],
+        "thumbnails": [
+            {
+                "type": "image",
+                "order": 100,
+                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/samples-filepicking-picker.png",
+                "alt": "File Picker Window"
+            }
+        ],
+        "authors": [
+            {
+                "gitHubAccount": "patrick-rodgers",
+                "company": "Microsoft",
+                "pictureUrl": "https://avatars.githubusercontent.com/u/13154702?s=460\u0026v=4",
+                "name": "Patrick Rodgers",
+                "twitter": "mediocrebowler"
+            }
+        ],
+        "references": [
+            {
+                "name": "Overview of File Picker",
+                "description": "The latest version of the file picker allows you to integrate using the same capabilities we use within the service.",
+                "url": "https://docs.microsoft.com/onedrive/developer/controls/file-pickers?WT.mc_id=m365-15741-cxa"
+            }
+        ]
+    },
+    {
+        "name": "onedrive-scenarios-list-view-invoke",
+        "source": "Microsoft",
+        "title": "List View Invoke",
+        "shortDescription": "This example scenario demonstrates how to securely call an AAD secured remote service from an SPFx list view command set.",
+        "url": "https://github.com/OneDrive/samples/tree/master/scenarios/list-view-service-integration",
+        "longDescription": [
+            "This example scenario demonstrates how to securely call an AAD secured remote service from an SPFx list view command set."
+        ],
+        "creationDateTime": "2022-05-11",
+        "updateDateTime": "2022-05-11",
+        "products": [
+            "SharePoint",
+            "Microsoft Graph"
+        ],
+        "metadata": [
+            {
+                "key": "GRAPH-APIS",
+                "value": "files"
+            }
+        ],
+        "tags": [],
+        "categories": [],
+        "thumbnails": [
+            {
+                "type": "image",
+                "order": 100,
+                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/scenarios-listviewinvoke.png",
+                "alt": "List view invoke flow"
+            }
+        ],
+        "authors": [
+            {
+                "gitHubAccount": "patrick-rodgers",
+                "company": "Microsoft",
+                "pictureUrl": "https://avatars.githubusercontent.com/u/13154702?s=460\u0026v=4",
+                "name": "Patrick Rodgers",
+                "twitter": "mediocrebowler"
+            }
+        ],
+        "references": []
+    },
+    {
+        "name": "onedrive-scenarios-files-hooks",
+        "source": "Microsoft",
+        "title": "OneDrive Files Hooks",
+        "shortDescription": "This sample application shows how an application (desktop application) can connect with either OneDrive for Business (ODB) or the OneDrive consumer (ODC) service.",
+        "url": "https://github.com/OneDrive/samples/tree/master/scenarios/onedrive-files-hooks",
+        "longDescription": [
+            "This sample application shows how an application (desktop application) can connect with either OneDrive for Business (ODB) or the OneDrive consumer (ODC) service."
+        ],
+        "creationDateTime": "2022-05-11",
+        "updateDateTime": "2022-05-11",
+        "products": [
+            "SharePoint",
+            "Microsoft Graph"
+        ],
+        "metadata": [
+            {
+                "key": "GRAPH-APIS",
+                "value": "files"
+            }
+        ],
+        "tags": [],
+        "categories": [],
+        "thumbnails": [
+            {
+                "type": "image",
+                "order": 100,
+                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/scenarios-files-hooks.png",
+                "alt": "File Hooks Flow"
+            }
+        ],
+        "authors": [
+            {
+                "gitHubAccount": "jansenbe",
+                "company": "Microsoft",
+                "pictureUrl": "https://avatars.githubusercontent.com/u/7451219?s=460\u0026v=4",
+                "name": "Bert Jansen",
+                "twitter": "O365Bert"
+            }
+        ],
+        "references": []
     }
 ]
