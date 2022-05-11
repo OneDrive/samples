@@ -1,0 +1,120 @@
+[
+    {
+        "name": "onedrive-samples-filehandler",
+        "source": "Microsoft",
+        "title": "OneDrive File Handler",
+        "shortDescription": "This file handler sample uses Nextjs, MSAL, the Monaco editor, and React to demonstrate a Markdown file handler for use in OneDrive and SharePoint.",
+        "url": "https://github.com/OneDrive/samples/tree/master/samples/file-handler",
+        "longDescription": [
+            "This file handler sample uses Nextjs, MSAL, the Monaco editor, and React to demonstrate a Markdown file handler for use in OneDrive and SharePoint."
+        ],
+        "creationDateTime": "2022-05-11",
+        "updateDateTime": "2022-05-11",
+        "products": [
+            "SharePoint",
+            "OneDrive",
+            "Microsoft Graph"
+        ],
+        "metadata": [
+            {
+                "key": "GRAPH-APIS",
+                "value": "files"
+            },
+            {
+                "key": "CLIENT-SIDE-DEV",
+                "value": "TypeScript"
+            }
+        ],
+        "tags": [],
+        "categories": [],
+        "thumbnails": [
+            {
+                "type": "image",
+                "order": 100,
+                "url": "onedrive-samples-filehandler-editor.png",
+                "alt": "File Handler Editor Display"
+            },
+            {
+                "type": "image",
+                "order": 101,
+                "url": "onedrive-samples-filehandler-menu.png",
+                "alt": "File Handler in UI menu"
+            }
+        ],
+        "authors": [
+            {
+                "gitHubAccount": "patrick-rodgers",
+                "company": "Microsoft",
+                "pictureUrl": "https://avatars.githubusercontent.com/u/13154702?s=460\u0026v=4",
+                "name": "Patrick Rodgers",
+                "twitter": "mediocrebowler"
+            }
+        ],
+        "references": [
+            {
+                "name": "Overview of File Handlers",
+                "description": "File Handlers are a type of Microsoft 365 add-in that integrates custom file types into the service allowing you to provide rich custom experiences for any file format.",
+                "url": "https://docs.microsoft.com/onedrive/developer/file-handlers?WT.mc_id=m365-15741-cxa"
+            }
+        ]
+    },
+    {
+        "name": "onedrive-samples-filepicking-csharp-basic",
+        "source": "Microsoft",
+        "title": "OneDrive v8 File Picker: C#",
+        "shortDescription": "This sample shows the file picking and file browsing controls using an .NET 6.0 ASP.NET Core application. For getting access tokens a call to the ASP.NET Core server is made.",
+        "url": "https://github.com/OneDrive/samples/tree/master/samples/file-picking/csharp-basic",
+        "longDescription": [
+            "This sample shows the file picking and file browsing controls using an .NET 6.0 ASP.NET Core application. For getting access tokens a call to the ASP.NET Core server is made."
+        ],
+        "creationDateTime": "2022-05-11",
+        "updateDateTime": "2022-05-11",
+        "products": [
+            "SharePoint",
+            "OneDrive",
+            "Microsoft Graph"
+        ],
+        "metadata": [
+            {
+                "key": "GRAPH-APIS",
+                "value": "files"
+            },
+            {
+                "key": "CLIENT-SIDE-DEV",
+                "value": "TypeScript"
+            }
+        ],
+        "tags": [],
+        "categories": [],
+        "thumbnails": [
+            {
+                "type": "image",
+                "order": 100,
+                "url": "onedrive-samples-filehandler-editor.png",
+                "alt": "File Handler Editor Display"
+            },
+            {
+                "type": "image",
+                "order": 101,
+                "url": "onedrive-samples-filehandler-menu.png",
+                "alt": "File Handler in UI menu"
+            }
+        ],
+        "authors": [
+            {
+                "gitHubAccount": "jansenbe",
+                "company": "Microsoft",
+                "pictureUrl": "https://avatars.githubusercontent.com/u/7451219?s=460\u0026v=4",
+                "name": "Bert Jansen",
+                "twitter": "O365Bert"
+            }
+        ],
+        "references": [
+            {
+                "name": "Overview of File Picker",
+                "description": "The latest version of the file picker allows you to integrate using the same capabilities we use within the service.",
+                "url": "https://docs.microsoft.com/onedrive/developer/controls/file-pickers?WT.mc_id=m365-15741-cxa"
+            }
+        ]
+    }
+]
