@@ -20,9 +20,9 @@ Samples demonstrate specific integration techniques to connect with OneDrive or 
 |[list-view-service-integration](./scenarios/list-view-service-integration/README.md)|Demonstration of securely calling a remote AAD secured service from an SPFx list view command. Includes full setup instructions.|
 |[onedrive-files-hooks](./scenarios/onedrive-files-hooks/README.md)|This sample application shows how an application (desktop application) can connect with either OneDrive for Business (ODB) or the OneDrive consumer (ODC) service.|
 
-## List of Links
+## Helpful Links
 
-Please select a heading for additional information on that topic.
+These topics and links are often helpful when building applications accessing files stored in OneDrive or SharePoint.
 
 <details>
   <summary>Getting Started</summary>
