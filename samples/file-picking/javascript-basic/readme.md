@@ -8,7 +8,7 @@ A single page example showing full interaction with the picker through plain Jav
 2. Update the `baseUrl` value in index.html with a valid absolute URL to either the SharePoint or OneDrive instance the picker should surface.
 3. Update the `msalParams` value in [scripts/auth.js](./scripts/auth.js) with valid configuration including authority and clientId
 
-> Additional details on these values can be found in [the documentation](https://link-to-docs)
+> Additional details on these values can be found in [the documentation](https://aka.ms/OneDrive/file-picker)
 
 ## Running this Sample
 
@@ -21,4 +21,4 @@ After updating the required values you need to:
 
 ## Next Steps
 
-You can modify the `params` configuation in [index.html](./index.html) to try out different configuration options to see how the picker behaves. Full information on the options is available in [the documentation](https://link-to-docs). 
+You can modify the `params` configuation in [index.html](./index.html) to try out different configuration options to see how the picker behaves. Full information on the options is available in [the documentation](https://aka.ms/OneDrive/file-picker). 

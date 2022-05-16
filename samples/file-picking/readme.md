@@ -1,6 +1,6 @@
 # OneDrive File Picker v8 Samples
 
-This folder contains samples for using the [OneDrive/SharePoint File Picker](https://link-to-docs).
+This folder contains samples for using the [OneDrive/SharePoint File Picker](https://aka.ms/OneDrive/file-picker).
 
 ## Sample Integrations
 
@@ -23,7 +23,7 @@ While it is not required to use an SDK when working with the File Picker, it can
 
 ## Example Configurations
 
-These are a collection of [example configuration files](./example-picker-configs/readme.md) to assist in understanding how to configure the picker. Full details can be found in [the documentation](https://link-to-docs) to create any configuration you need, these cover common scenarios.
+These are a collection of [example configuration files](./example-picker-configs/readme.md) to assist in understanding how to configure the picker. Full details can be found in [the documentation](https://aka.ms/OneDrive/file-picker) to create any configuration you need, these cover common scenarios.
 
 ## Required Setup
 

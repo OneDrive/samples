@@ -2,7 +2,7 @@
 
 This folder contains example picker configurations based on various scenarios. We welcome your submissions - if you've figured out a neat trick, please share!
 
-For most examples the minimal required configuration is shown illustrating the given usecase, for full details on all the options available, please [see the documentation](https://link-to-docs)
+For most examples the minimal required configuration is shown illustrating the given usecase, for full details on all the options available, please [see the documentation](https://aka.ms/OneDrive/file-picker)
 
 |Name|Description|
 |---|---|
