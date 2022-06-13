@@ -31,13 +31,13 @@
             {
                 "type": "image",
                 "order": 100,
-                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/samples-filehandler-editor.png",
+                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/samples-filehandler-editor.png?raw=true",
                 "alt": "File Handler Editor Display"
             },
             {
                 "type": "image",
                 "order": 101,
-                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/samples-filehandler-menu.png",
+                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/samples-filehandler-menu.png?raw=true",
                 "alt": "File Handler in UI menu"
             }
         ],
@@ -86,7 +86,7 @@
             {
                 "type": "image",
                 "order": 100,
-                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/samples-filepicking-picker.png",
+                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/samples-filepicking-picker.png?raw=true",
                 "alt": "File Picker Window"
             }
         ],
@@ -135,7 +135,7 @@
             {
                 "type": "image",
                 "order": 100,
-                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/samples-filepicking-picker.png",
+                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/samples-filepicking-picker.png?raw=true",
                 "alt": "File Picker Window"
             }
         ],
@@ -188,7 +188,7 @@
             {
                 "type": "image",
                 "order": 100,
-                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/samples-filepicking-picker.png",
+                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/samples-filepicking-picker.png?raw=true",
                 "alt": "File Picker Window"
             }
         ],
@@ -237,7 +237,7 @@
             {
                 "type": "image",
                 "order": 100,
-                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/samples-filepicking-picker.png",
+                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/samples-filepicking-picker.png?raw=true",
                 "alt": "File Picker Window"
             }
         ],
@@ -286,7 +286,7 @@
             {
                 "type": "image",
                 "order": 100,
-                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/samples-filepicking-picker.png",
+                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/samples-filepicking-picker.png?raw=true",
                 "alt": "File Picker Window"
             }
         ],
@@ -334,7 +334,7 @@
             {
                 "type": "image",
                 "order": 100,
-                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/scenarios-listviewinvoke.png",
+                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/scenarios-listviewinvoke.png?raw=true",
                 "alt": "List view invoke flow"
             }
         ],
@@ -376,7 +376,7 @@
             {
                 "type": "image",
                 "order": 100,
-                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/scenarios-files-hooks.png",
+                "url": "https://github.com/OneDrive/samples/blob/master/assets/sample-gallery-thumbnails/scenarios-files-hooks.png?raw=true",
                 "alt": "File Hooks Flow"
             }
         ],
