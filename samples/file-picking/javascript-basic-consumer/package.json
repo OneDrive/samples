@@ -1,0 +1,15 @@
+{
+  "name": "js-basic-consumer",
+  "version": "0.0.1",
+  "description": "A one page sample showing use of the picker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dev-server.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.18.1"
+  }
+}
