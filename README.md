@@ -11,7 +11,7 @@ Samples demonstrate specific integration techniques to connect with OneDrive or 
 |Name|Description|
 |---|---|
 |[file-handler](./samples/file-handler/README.md)|Shows how to build a OneDrive/SharePoint file handler. This allows you to provide custom open, edit, and create actions for various file types.|
-|[file-picker](./samples/file-picking/README.md)|demonstrating how to use the latest service provided file picker for M365 allowing your users to easily and consistently open files stored within OneDrive and SharePoint.|
+|[file-picker](samples/file-picking/README.md)|demonstrating how to use the latest service provided file picker for M365 allowing your users to easily and consistently open files stored within OneDrive and SharePoint.|
 
 ## Scenarios
 
