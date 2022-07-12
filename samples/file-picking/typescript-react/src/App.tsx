@@ -34,9 +34,6 @@ function App() {
 
   function onPicked(pickerResults) {
     if (pickerResults) {
-
-      console.log(`asdfjasdf:>> ${JSON.stringify(pickerResults)}`);
-
       setResults(pickerResults);
     }
   }

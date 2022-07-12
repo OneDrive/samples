@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: SharePoint Framework Issues
+    url: https://aka.ms/spfx-issues
+    about: For SharePoint Framework related questions please report issues here
+  - name: Microsoft Graph Docs
+    url: https://developer.microsoft.com/graph
+    about: For more information on working with Micrsoft Graph, please review the public documentation before asking general questions
