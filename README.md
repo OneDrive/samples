@@ -10,15 +10,15 @@ Samples demonstrate specific integration techniques to connect with OneDrive or 
 
 |Name|Description|
 |---|---|
-|[file-handler](./samples/file-handler/README.md)|Shows how to build a OneDrive/SharePoint file handler. This allows you to provide custom open, edit, and create actions for various file types.|
-|[file-picker](/samples/file-picking/README.md)|demonstrating how to use the latest service provided file picker for M365 allowing your users to easily and consistently open files stored within OneDrive and SharePoint.|
+|[file-handler](https://github.com/OneDrive/samples/tree/master/samples/file-handler/README.md)|Shows how to build a OneDrive/SharePoint file handler. This allows you to provide custom open, edit, and create actions for various file types.|
+|[file-picker](https://github.com/OneDrive/samples/tree/master/samples/file-picking/README.md)|demonstrating how to use the latest service provided file picker for M365 allowing your users to easily and consistently open files stored within OneDrive and SharePoint.|
 
 ## Scenarios
 
 |Name|Description|
 |---|---|
-|[list-view-service-integration](./scenarios/list-view-service-integration/README.md)|Demonstration of securely calling a remote AAD secured service from an SPFx list view command. Includes full setup instructions.|
-|[onedrive-files-hooks](./scenarios/onedrive-files-hooks/README.md)|This sample application shows how an application (desktop application) can connect with either OneDrive for Business (ODB) or the OneDrive consumer (ODC) service.|
+|[list-view-service-integration](https://github.com/OneDrive/samples/tree/master/scenarios/list-view-service-integration/README.md)|Demonstration of securely calling a remote AAD secured service from an SPFx list view command. Includes full setup instructions.|
+|[onedrive-files-hooks](https://github.com/OneDrive/samples/tree/master/scenarios/onedrive-files-hooks/README.md)|This sample application shows how an application (desktop application) can connect with either OneDrive for Business (ODB) or the OneDrive consumer (ODC) service.|
 
 ## Helpful Links
 
