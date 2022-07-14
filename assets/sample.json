@@ -157,6 +157,55 @@
         ]
     },
     {
+        "name": "onedrive-consumer-samples-filepicking-javascript-basic",
+        "source": "Microsoft",
+        "title": "OneDrive File Picker: JavaScript (OneDrive Consumer)",
+        "shortDescription": "A single page example showing full interaction with the picker targeting consumer OneDrive through plain JavaScript on a single page with no external dependencies.",
+        "url": "https://github.com/OneDrive/samples/tree/master/samples/file-picking/javascript-basic",
+        "longDescription": [
+            "A single page example showing full interaction with the picker targeting consumer OneDrive through plain JavaScript on a single page with no external dependencies."
+        ],
+        "creationDateTime": "2022-05-11",
+        "updateDateTime": "2022-05-11",
+        "products": [
+            "SharePoint",
+            "OneDrive",
+            "Microsoft Graph"
+        ],
+        "metadata": [
+            {
+                "key": "GRAPH-APIS",
+                "value": "files"
+            }
+        ],
+        "tags": [],
+        "categories": [],
+        "thumbnails": [
+            {
+                "type": "image",
+                "order": 100,
+                "url": "https://raw.githubusercontent.com/OneDrive/samples/master/assets/sample-gallery-thumbnails/samples-filepicking-picker.png",
+                "alt": "File Picker Window"
+            }
+        ],
+        "authors": [
+            {
+                "gitHubAccount": "patrick-rodgers",
+                "company": "Microsoft",
+                "pictureUrl": "https://avatars.githubusercontent.com/u/13154702?s=460\u0026v=4",
+                "name": "Patrick Rodgers",
+                "twitter": "mediocrebowler"
+            }
+        ],
+        "references": [
+            {
+                "name": "Overview of File Picker",
+                "description": "The latest version of the file picker allows you to integrate using the same capabilities we use within the service.",
+                "url": "https://docs.microsoft.com/onedrive/developer/controls/file-pickers?WT.mc_id=m365-15741-cxa"
+            }
+        ]
+    },
+    {
         "name": "onedrive-samples-filepicking-typescript-react",
         "source": "Microsoft",
         "title": "OneDrive File Picker: React",
