@@ -19,6 +19,7 @@ Samples demonstrate specific integration techniques to connect with OneDrive or 
 |---|---|
 |[list-view-service-integration](https://github.com/OneDrive/samples/tree/master/scenarios/list-view-service-integration)|Demonstration of securely calling a remote AAD secured service from an SPFx list view command. Includes full setup instructions.|
 |[onedrive-files-hooks](https://aka.ms/OneDrive/samples/files-hooks)|This sample application shows how an application (desktop application) can connect with either OneDrive for Business (ODB) or the OneDrive consumer (ODC) service.|
+|[throttling-ratelimit-handling](scenarios/throttling-ratelimit-handling/) | Sample showing how to use the RateLimit response headers to avoid getting throttled. |
 
 ## Helpful Links
 
