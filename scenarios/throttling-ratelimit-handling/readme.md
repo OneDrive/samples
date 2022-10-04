@@ -28,7 +28,8 @@ Follow below steps to create and configure your Azure AD application.
 7. Click on **Grant admin consent for...** to consent the added permissions
 8. Go to **Certificates & secrets**, click on **Certificates** and **Upload certificate**, pick the .cer file of your certificate and add it.
 
-> **Note**
+> **Note:**
+>
 > If you don't have a certificate available then you can use [Windows PowerShell to create one](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-self-signed-certificate).
 
 ### Step 2: Plugging in the needed information
@@ -84,7 +85,8 @@ Running the sample again will initially look the same, but when you're crossing 
 
 A typical pattern we see with applications getting throttled is the following: the application starts full speed, gets throttled and as such is halted for some time and then again ramps up...until it's halted again due to throttling. This cycle of ramping up and halting is not very efficient and results in a lesser throughput compared to using the RateLimit headers and avoid getting throttled. Using RateLimit headers will slow down your application but you'll not see the application being halted. Furthermore when a request is retried due to throttling each retry itself counts towards the defined resource unit quota, resulting in less successful requests for a given resource unit quota.
 
-> **Important**
+> **Important:**
+>
 > The highest application throughput is achieved by "just" staying within the application's resource unit quota, so by "just" not getting throttled.
 
 Below graph show the request throughput for this demo application, clearly showing the difference between using RateLimit headers and not using them. The blue line shows the number of requests for when RateLimit headers are used, it's relatively smooth and there are no application halts. The orange line shows the number of requests when not using RateLimit headers, you'll see more horizontal parts indicating application halting and after 5 minutes there's considerately less throughput compared to when using RateLimit headers.
