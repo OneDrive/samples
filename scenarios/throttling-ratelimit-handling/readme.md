@@ -7,7 +7,7 @@ In addition to the Retry-After header in the response of throttled requests, Sha
 > **Note:**
 >
 > - These headers are currently in beta and subject to change. At the time when the headers were adopted, the IETF specification was in draft. The current implementation is based on the draft-03 of the IETF specification. There is the potential for changes when the specification is final, and we will adapt to those changes in the future.
-> - RateLimit headers only are returned when using application permissions.
+> - RateLimit headers only are returned when using an Azure AD application for authentication.
 
 ## Preparing the RateLimit header demo application
 
