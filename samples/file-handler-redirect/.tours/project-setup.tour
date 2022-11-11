@@ -1,0 +1,26 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Project Setup",
+  "steps": [
+    {
+      "file": "azure-function/FileHandlerPostTrigger/index.ts",
+      "description": "Update the tenant id for the tenant containing the application you created in Azure AD",
+      "line": 102
+    },
+    {
+      "file": "azure-function/FileHandlerPostTrigger/index.ts",
+      "description": "Update the client id (application id) for the application you created in Azure AD",
+      "line": 104
+    },
+    {
+      "file": "azure-function/FileHandlerPostTrigger/index.ts",
+      "description": "Update the client secret string value. Note: for production certificates are preferred.",
+      "line": 106
+    },
+    {
+      "file": "azure-function/package.json",
+      "description": "Don't forget to NPM install 🙂",
+      "line": 13
+    }
+  ]
+}

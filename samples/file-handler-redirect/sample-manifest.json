@@ -1,0 +1,90 @@
+{
+	"id": "00000000-0000-0000-0000-000000000000",
+	"acceptMappedClaims": null,
+	"accessTokenAcceptedVersion": 2,
+	"addIns": [
+		{
+			"id": "00000000-0000-0000-0000-000000000000",
+			"type": "FileHandler",
+			"properties": [
+				{
+					"key": "version",
+					"value": "2"
+				},
+				{
+					"key": "fileTypeDisplayName",
+					"value": "Contoso Markdown"
+				},
+				{
+					"key": "fileTypeIcon",
+					"value": "{\"svg\":\"https://{static cdn image path}/icon.svg\",\"png1x\":\"https://{static cdn image path}/icon@1x.png\",\"png1.5x\":\"https://{static cdn image path}/icon@1.5x.png\",\"png2x\":\"https://{static cdn image path}/icon@2x.png\"}"
+				},
+				{
+					"key": "appIcon",
+					"value": "{\"svg\":\"https://{static cdn image path}/app-icon.svg\",\"png1x\":\"https://{static cdn image path}/app-icon@1x.png\",\"png1.5x\":\"https://{static cdn image path}/app-icon@1.5x.png\",\"png2x\":\"https://{static cdn image path}/app-icon@2x.png\"}"
+				},
+				{
+					"key": "actions",
+					"value": "[{\"type\":\"open\",\"url\":\"http://localhost:7071/api/FileHandlerPostTrigger\",\"availableOn\":{\"file\":{\"extensions\":[\".pdf\"]}}},{\"type\":\"preview\",\"url\":\"http://localhost:7071/api/FileHandlerPostTrigger\",\"availableOn\":{\"file\":{\"extensions\":[\".pdf\"]}}}]"
+				}
+			]
+		}
+	],
+	"allowPublicClient": true,
+	"appId": "00000000-0000-0000-0000-000000000000",
+	"appRoles": [],
+	"oauth2AllowUrlPathMatching": false,
+	"createdDateTime": "2020-10-13T17:29:27Z",
+	"description": null,
+	"certification": null,
+	"disabledByMicrosoftStatus": null,
+	"groupMembershipClaims": null,
+	"identifierUris": [],
+	"informationalUrls": {
+		"termsOfService": null,
+		"support": null,
+		"privacy": null,
+		"marketing": null
+	},
+	"keyCredentials": [],
+	"knownClientApplications": [],
+	"logoUrl": null,
+	"name": "Sample-FileHandler-App-Manifest",
+	"notes": null,
+	"oauth2AllowIdTokenImplicitFlow": false,
+	"oauth2AllowImplicitFlow": false,
+	"oauth2Permissions": [],
+	"oauth2RequirePostResponse": false,
+	"optionalClaims": null,
+	"orgRestrictions": [],
+	"parentalControlSettings": {
+		"countriesBlockedForMinors": [],
+		"legalAgeGroupRule": "Allow"
+	},
+	"passwordCredentials": [
+		{
+			"customKeyIdentifier": null,
+			"endDate": "2023-02-11T15:25:52.394Z",
+			"keyId": "00000000-0000-0000-0000-000000000000",
+			"startDate": "2022-11-11T15:25:52.394Z",
+			"value": null,
+			"createdOn": "2022-11-11T15:25:58.775759Z",
+			"hint": "",
+			"displayName": ""
+		}
+	],
+	"preAuthorizedApplications": [],
+	"publisherDomain": "three18studios.com",
+	"replyUrlsWithType": [
+		{
+			"url": "http://localhost:7071/api/FileHandlerPostTrigger",
+			"type": "Web"
+		}
+	],
+	"requiredResourceAccess": [],
+	"samlMetadataUrl": null,
+	"signInUrl": null,
+	"signInAudience": "AzureADMyOrg",
+	"tags": [],
+	"tokenEncryptionKeyId": null
+}

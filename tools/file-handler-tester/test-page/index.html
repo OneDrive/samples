@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <script>
+
+        async function sendTest(e) {
+
+            e.preventDefault();
+
+            // needs to be the url to the azure function local host project
+            const url = "http://localhost:7071/api/FileHandlerPostTrigger";
+
+            // you will need to update this with valid values for testing
+            const data = {
+                "cultureName": "en-US",
+                "client": "SharePoint",
+                "domainHint": "organizations",
+                "userId": "{user login}",
+                "appId": "{app id used for auth}",
+                "items": [
+                    "https://graph.microsoft.com/v1.0/shares/{special sharing link from file handler}/driveItem"
+                ]
+            }
+
+            // the below code takes the parameters defined above and converts them into a form
+            // which it then posts to the local testing file handler url. You could just hand craft the form
+            // but this is a bit easier to adjust the values
+            const keys = Reflect.ownKeys(data);
+
+            const form = document.createElement("form");
+            form.setAttribute("action", url);
+            form.setAttribute("method", "POST");
+            document.body.append(form);
+
+            for (let i = 0; i < keys.length; i++) {
+
+                const key = keys[i];
+
+                const value = key === "items" ? JSON.stringify(data[key]) : data[key];
+
+                const input = document.createElement("input");
+                input.setAttribute("type", "hidden")
+                input.setAttribute("name", key);
+                input.setAttribute("value", value);
+                form.appendChild(input);
+            }
+
+            // doign a POST form submission mocks how the file handler will receive data
+            // from the server when invoked
+            form.submit();
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <button id="send">Send Test</button>
+</body>
+
+<script type="text/javascript">
+
+    document.getElementById("send").onclick = sendTest;
+
+</script>
+
+</html>
