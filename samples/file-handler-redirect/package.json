@@ -1,0 +1,12 @@
+{
+  "name": "filehandler-redirect",
+  "private": true,
+  "version": "0.0.1",
+  "description": "An example file handler that redirects the file-open to the browser",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Patrick Rodgers (Microsoft)",
+  "license": "MIT"
+}

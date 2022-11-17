@@ -1,0 +1,230 @@
+<html>
+
+<head>
+    <script tye="text/javascript" src="https://alcdn.msauth.net/browser/2.19.0/js/msal-browser.min.js"></script>
+    <script type="text/javascript" src="scripts/auth.js"></script>
+    <script>
+
+        const baseUrl = "https://{tenant}-my.sharepoint.com/";
+
+        /**
+         * Combines an arbitrary set of paths ensuring and normalizes the slashes
+         *
+         * @param paths 0 to n path parts to combine
+         */
+        function combine(...paths) {
+
+            return paths
+                .map(path => path.replace(/^[\\|/]/, "").replace(/[\\|/]$/, ""))
+                .join("/")
+                .replace(/\\/g, "/");
+        }
+
+        // the options we pass to the browser page through the querystring
+        const params = {
+            sdk: "8.0",
+            entry: {
+                oneDrive: {
+                    files: {},
+                }
+            },
+            authentication: {},
+            messaging: {
+                origin: "http://localhost:3000",
+                channelId: "27"
+            },
+            typesAndSources: {
+                mode: "files",
+                pivots: {
+                    oneDrive: true,
+                    recent: true,
+                },
+            },
+            navigation: {
+                mode: "host",
+            },
+            commands: {
+                open: {
+                    /**
+                     * Specifies a series of 'handlers' for clicking files and folders.
+                     * For each handler, the invoked item is tested against `filters`,
+                     * and the first matching handler has its behavior applied.
+                     * If no handler matches, the default behavior applies.
+                     */
+                    handlers: [{
+                        // filters: ["!folder"],
+                        filters: [".txt"],
+                        /**
+                         * Specifies the target for opening the item
+                         * - `none`: Do not allow the item to be opened.
+                         * - `navigate`: Open the item within the experience.
+                         * - `external`: Open the item in a new tab.
+                         * - `host`: Ask the host to open the item.
+                         */
+                        target: "host",
+                    }]
+                },
+            },
+        };
+
+        let port = null;
+
+        async function launchBrowser() {
+
+            const frame = document.getElementById("browserFrame");
+
+            return launch(frame.contentWindow, "fileBrowser");
+        }
+
+        async function launch(win, name) {
+
+            const authToken = await getToken({
+                resource: baseUrl,
+                command: "authenticate",
+                type: "SharePoint",
+            });
+
+            const optionsPrimitive = {};
+            optionsPrimitive[name] = JSON.stringify(params);
+
+            const queryString = new URLSearchParams(optionsPrimitive);
+
+            const url = combine(baseUrl, `_layouts/15/${name}.aspx?${queryString}`);
+
+            const form = win.document.createElement("form");
+            form.setAttribute("action", url);
+            form.setAttribute("method", "POST");
+            win.document.body.append(form);
+
+            const input = win.document.createElement("input");
+            input.setAttribute("type", "hidden")
+            input.setAttribute("name", "access_token");
+            input.setAttribute("value", authToken);
+            form.appendChild(input);
+
+            form.submit();
+
+            window.addEventListener("message", (event) => {
+
+                if (event.source && event.source === win) {
+
+                    const message = event.data;
+
+                    if (message.type === "initialize" && message.channelId === params.messaging.channelId) {
+
+                        port = event.ports[0];
+
+                        port.addEventListener("message", messageListener);
+
+                        port.start();
+
+                        port.postMessage({
+                            type: "activate",
+                        });
+                    }
+                }
+            });
+        }
+
+        async function messageListener(message) {
+            switch (message.data.type) {
+
+                case "notification":
+                    console.log(`notification: ${JSON.stringify(message.data)}`);
+                    break;
+
+                case "command":
+
+                    port.postMessage({
+                        type: "acknowledge",
+                        id: message.data.id,
+                    });
+
+                    const command = message.data.data;
+
+                    switch (command.command) {
+
+                        case "authenticate":
+
+                            // getToken is from scripts/auth.js
+                            const token = await getToken(command);
+
+                            if (typeof token !== "undefined" && token !== null) {
+
+                                port.postMessage({
+                                    type: "result",
+                                    id: message.data.id,
+                                    data: {
+                                        result: "token",
+                                        token,
+                                    }
+                                });
+
+                            } else {
+                                console.error(`Could not get auth token for command: ${JSON.stringify(command)}`);
+                            }
+
+                            break;
+
+                        case "open":
+
+                            port.postMessage({
+                                type: "result",
+                                id: message.data.id,
+                                data: {
+                                    result: "success",
+                                },
+                            });
+
+                            console.log(`OPEN >> ${JSON.stringify(command)}`);
+
+                            alert(`Intercepted "open" command for .txt file: ${command.item.name}`);
+
+                            break;
+
+                        default:
+
+                            console.warn(`Unsupported command: ${JSON.stringify(command)}`, 2);
+
+                            port.postMessage({
+                                result: "error",
+                                error: {
+                                    code: "unsupportedCommand",
+                                    message: command.command
+                                },
+                                isExpected: true,
+                            });
+                            break;
+                    }
+
+                    break;
+
+                default:
+                    console.log("here");
+                    console.log(JSON.stringify(message));
+                    break;
+            }
+        }
+
+    </script>
+
+
+</head>
+
+<body>
+    <iframe id="browserFrame" width="100%" height="800"></iframe>
+</body>
+
+<script type="text/javascript">
+
+    document.onreadystatechange = () => {
+
+        if (document.readyState === "interactive") {
+
+            launchBrowser();
+        }
+    }
+
+</script>
+
+</html>

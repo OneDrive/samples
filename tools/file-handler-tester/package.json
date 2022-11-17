@@ -1,0 +1,20 @@
+{
+  "name": "file-handler-tester",
+  "private": true,
+  "version": "0.0.1",
+  "description": "A test app to send post requests to file handlers under development",
+  "main": "./lib/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "tsc -p . && node ./lib/index.js",
+    "listen": "tsc -p . && node ./lib/listen.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Patrick Rodgers (Microsoft)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^16.18.3",
+    "node-fetch": "^3.2.10",
+    "typescript": "^4.8.4"
+  }
+}

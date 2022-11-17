@@ -1,0 +1,3 @@
+*.pem
+lib
+node_modules

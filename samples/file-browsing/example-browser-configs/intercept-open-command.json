@@ -1,0 +1,24 @@
+{
+    "sdk": "8.0",
+    "entry": {
+        "sharePoint": {
+            "byPath": {
+                "web": "/sites/dev"
+            }
+        }
+    },
+    "authentication": {},
+    "messaging": {
+        "origin": "http://localhost:3000",
+        "channelId": "27"
+    },
+    "commands": {
+        "open": {
+            "handlers": [
+                {
+                    "target": "host"
+                }
+            ]
+        }
+    }
+}
