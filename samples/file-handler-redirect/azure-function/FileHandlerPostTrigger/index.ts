@@ -50,7 +50,7 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
         // in production this should include proper error handling and UX to inform the user of any problems
         const docInfo = await docInfoResponse.json();
 
-        // do a 302 redirect directly to the file, which should allow the browser to open the file directly
+        // do a 302 redirect directly to the file, which allows the browser to open the file directly
         context.res = {
             status: 302,
             headers: {
