@@ -6,12 +6,14 @@ This sample shows how to work with the picker and the example [sdk-domevents](..
 
 ## Setup
 
-You need a .env file with:
+You need a .env file with (replacing {tenant id} with the correct value):
 
 ```
 CLIENT_ID = '"{AAD CLIENT ID}"'
 
-CLIENT_AUTHORITY = '"https://login.microsoftonline.com/consumers"'
+CLIENT_AUTHORITY_OD = '"https://login.microsoftonline.com/consumers"'
+
+CLIENT_AUTHORITY_ODSP = '"https://login.microsoftonline.com/{tenant id}"'
 ```
 
 ## AAD App Setup for Personal OneDrive Access
