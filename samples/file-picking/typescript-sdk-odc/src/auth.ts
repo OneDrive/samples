@@ -3,25 +3,44 @@ import { combine } from "@pnp/core";
 import { IAuthenticateCommand } from "@pnp/picker-sdk";
 import { get } from "env-var";
 
-const clientId = get("CLIENT_ID").required().asString();
-const authority = get("CLIENT_AUTHORITY").required().asString();
-
-const msalParams = {
-    auth: {
-        authority,
-        clientId,
-        redirectUri: "http://localhost:3000",
-    },
-}
-
-const app = new PublicClientApplication(msalParams);
+let app : PublicClientApplication = null;
 
 export async function getToken(command: IAuthenticateCommand): Promise<string> {
+    let authParams = { scopes:[] };
 
-    return getTokenWithScopes([`${combine(command.resource, ".default")}`]);
+    switch (command.type) {
+        case "SharePoint":
+            authParams = { scopes: [`${combine(command.resource, ".default")}`] };
+            break;
+        case "Graph":
+                authParams = { scopes: ["OneDrive.ReadWrite"] };
+                break;
+        default:
+            break;
+    }
+
+    return getTokenWithScopes(authParams.scopes, command.type);
 }
 
-export async function getTokenWithScopes(scopes: string[], additionalAuthParams?: Omit<SilentRequest, "scopes">): Promise<string> {
+export async function getTokenWithScopes(scopes: string[], type: string, additionalAuthParams?: Omit<SilentRequest, "scopes">): Promise<string> {
+
+    const clientId = get("CLIENT_ID").required().asString();
+    let authority = get("CLIENT_AUTHORITY_OD").required().asString();
+
+    if(type == "SharePoint")
+    {
+        authority = get("CLIENT_AUTHORITY_ODSP").required().asString();
+    }
+
+    const msalParams = {
+        auth: {
+            authority,
+            clientId,
+            redirectUri: "http://localhost:3000",
+        },
+    }
+
+    app = new PublicClientApplication(msalParams);
 
     let accessToken = "";
     const authParams = { scopes, ...additionalAuthParams };

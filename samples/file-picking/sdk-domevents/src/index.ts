@@ -9,7 +9,7 @@ import { combine } from "./utils.js";
 
 export * from "./types.js";
 
-type TokenFactory = (command: IAuthenticateCommand) => Promise<string>;
+export type TokenFactory = (command: IAuthenticateCommand) => Promise<string>;
 
 interface PickerChangeEvent extends Event {
     detail: IPickData;
@@ -29,16 +29,16 @@ type PickerWindow = {
     removeEventListener<K extends keyof PickerWindowEventMap>(type: K, listener: (this: Window, ev: PickerWindowEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
 }
 
-interface BasePickerInit {
+export interface BasePickerInit {
     tokenFactory: TokenFactory,
     options: IFilePickerOptions,
 }
 
-interface OneDriveConsumerInit extends BasePickerInit {
+export interface OneDriveConsumerInit extends BasePickerInit {
     type: "Consumer",
 }
 
-interface ODSPInit extends BasePickerInit {
+export interface ODSPInit extends BasePickerInit {
     type: "ODSP",
     baseUrl: string,
 }
