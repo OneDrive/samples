@@ -39,3 +39,14 @@ To run the samples you will need to create an AAD application. This is the appli
    2. Add AllSites.Read, MyFiles.Read for SharePoint delegated permissions
 
 > When connecting to OneDrive Personal, you will request the `OneDrive.ReadWrite` scope which cooresponds to `Files.ReadWrite.All` or `Files.ReadWrite`.
+
+## FAQ
+
+<details>
+  <summary>How can I determine the base URL?</summary>
+
+  - To get the url of a user's main OneDrive you can use `https://graph.microsoft.com/v1.0/me/drive` and parse the webUrl property.
+
+  - For referencing a SharePoint site, you'd need to know what site/library you wanted to explorer. You could possibly use the https://graph.microsoft.com/v1.0/me/followedSites call for sites the current user follows.
+
+</details>
