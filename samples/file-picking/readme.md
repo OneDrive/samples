@@ -50,3 +50,10 @@ To run the samples you will need to create an AAD application. This is the appli
   - For referencing a SharePoint site, you'd need to know what site/library you wanted to explorer. You could possibly use the https://graph.microsoft.com/v1.0/me/followedSites call for sites the current user follows.
 
 </details>
+
+<details>
+  <summary>Can I show the "Shared" menu item?</summary>
+
+  Currently no, due to internal limitations with the control setting the "sharedLibraries" pivot the Quick Access section is shown, but not shared. This is a known gap between the service and 3P capabilities for which there is not currently a timeline to address.
+
+</details>
