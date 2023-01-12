@@ -1,0 +1,32 @@
+{
+    "sdk": "8.0",
+    "entry": {
+        "oneDrive": {
+            "files": {}
+        }
+    },
+    "authentication": {},
+    "messaging": {
+        "origin": "http://localhost:3000",
+        "channelId": "27"
+    },
+    "typesAndSources": {
+        "mode": "folders",
+        "pivots": {
+            "oneDrive": true,
+            "recent": true
+        },
+        "filters": ["folder"]
+    },
+    "tray": {
+        "prompt": "save-as",
+        "saveAs": {
+            "fileName": "test.txt"
+        }
+    },
+    "commands": {
+        "pick": {
+            "label": "Save As"
+        }
+    }
+}

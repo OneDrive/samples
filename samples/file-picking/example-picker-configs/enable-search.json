@@ -1,0 +1,23 @@
+{
+    "sdk": "8.0",
+    "entry": {
+        "oneDrive": {
+            "files": {}
+        }
+    },
+    "authentication": {},
+    "messaging": {
+        "origin": "http://localhost:3000",
+        "channelId": "27"
+    },
+    "typesAndSources": {
+        "mode": "files",
+        "pivots": {
+            "oneDrive": true,
+            "recent": true
+        }
+    },
+    "search": {
+        "enabled": true
+    }
+}
