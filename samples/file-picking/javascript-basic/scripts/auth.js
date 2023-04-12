@@ -11,9 +11,11 @@ const app = new msal.PublicClientApplication(msalParams);
 async function getToken(command) {
 
     let accessToken = "";
+    let authParams = null;
 
     switch (command.type) {
         case "SharePoint":
+        case "SharePoint_SelfIssued":
             authParams = { scopes: [`${combine(command.resource, ".default")}`] };
             break;
         default:
