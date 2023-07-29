@@ -32,11 +32,7 @@ const params = {
 // For this sample we hard code it, you can get it various ways in your application
 const baseUrl = "https://{tenant}-my.sharepoint.com";
 
-export interface PickerDialogProps {
-    host: Window;
-}
-
-export function PickerDialog(props: PickerDialogProps) {
+export function PickerDialog() {
 
     const [contentWindow, setContentWindow] = useState<Window | null>(null);
 
