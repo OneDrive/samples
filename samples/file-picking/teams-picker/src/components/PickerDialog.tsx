@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext, useRef } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { dialog } from "@microsoft/teams-js";
 import { combine, getGUID } from "@pnp/core";
 import { TeamsFxContext } from "./Context";
