@@ -34,3 +34,5 @@ Follow below instructions to get started with this application template for loca
 * [Teams Toolkit CLI](https://docs.microsoft.com/microsoftteams/platform/toolkit/teamsfx-cli)
 * [TeamsFx SDK](https://docs.microsoft.com/microsoftteams/platform/toolkit/teamsfx-sdk)
 * [Teams Toolkit Samples](https://github.com/OfficeDev/TeamsFx-Samples)
+* [How to integrate a functions app for SSO](https://github.com/OfficeDev/TeamsFx/wiki/How-to-integrate-Azure-Functions-with-your-Teams-app)
+* [Add SSO](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/add-single-sign-on)

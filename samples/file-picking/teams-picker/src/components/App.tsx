@@ -56,7 +56,7 @@ export default function App() {
               <Route path="/termsofuse" element={<TermsOfUse />} />
               <Route path="/tab" element={<Tab />} />
               <Route path="/config" element={<TabConfig />} />
-              <Route path="/picker-dialog" element={<PickerDialog />} />
+              <Route path="/picker-dialog" element={<PickerDialog host={window} />} />
               <Route path="*" element={<Navigate to={"/tab"} />}></Route>
             </Routes>
           )}

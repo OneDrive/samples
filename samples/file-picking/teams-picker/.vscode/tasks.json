@@ -54,7 +54,8 @@
         {
             "label": "Start application",
             "dependsOn": [
-                "Start frontend"
+                "Start frontend",
+                "Start backend"
             ]
         },
         {
@@ -78,6 +79,48 @@
                     "endsPattern": "Compiled|Failed|compiled|failed"
                 }
             }
-        }
+        },
+        {
+            "label": "Start backend",
+            "type": "shell",
+            "command": "npm run dev:teamsfx",
+            "isBackground": true,
+            "options": {
+              "cwd": "${workspaceFolder}/api",
+              "env": {
+                "PATH": "${workspaceFolder}/devTools/func:${env:PATH}"
+              }
+            },
+            "problemMatcher": {
+              "pattern": {
+                "regexp": "^.*$",
+                "file": 0,
+                "location": 1,
+                "message": 2
+              },
+              "background": {
+                "activeOnStart": true,
+                "beginsPattern": "^.*(Job host stopped|signaling restart).*$",
+                "endsPattern": "^.*(Worker process started and initialized|Host lock lease acquired by instance ID).*$"
+              }
+            },
+            "presentation": {
+              "reveal": "silent"
+            },
+            "dependsOn": ["Watch backend"]
+          },
+          {
+            "label": "Watch backend",
+            "type": "shell",
+            "command": "npm run watch",
+            "isBackground": true,
+            "options": {
+              "cwd": "${workspaceFolder}/api"
+            },
+            "problemMatcher": "$tsc-watch",
+            "presentation": {
+              "reveal": "silent"
+            }
+          }
     ]
 }

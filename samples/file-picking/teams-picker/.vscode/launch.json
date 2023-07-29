@@ -132,7 +132,25 @@
                 "hidden": true
             },
             "internalConsoleOptions": "neverOpen"
-        }
+        },
+        {
+            "name": "Attach to Frontend (Edge)",
+            "cascadeTerminateToConfigurations": [
+              "Attach to Backend"
+            ],
+          },
+          {
+            "name": "Attach to Backend",
+            "type": "node",
+            "request": "attach",
+            "port": 9229,
+            "restart": true,
+            "presentation": {
+              "group": "all",
+              "hidden": true
+            },
+            "internalConsoleOptions": "neverOpen"
+          }
     ],
     "compounds": [
         {
@@ -206,6 +224,14 @@
                 "order": 2
             },
             "stopAll": true
-        }
-    ]
+        },
+        {
+            "name": "Debug (Edge)",
+            "configurations": [
+              "Attach to Frontend (Edge)",
+              "Attach to Backend"
+            ],
+          },
+    ],
+    
 }

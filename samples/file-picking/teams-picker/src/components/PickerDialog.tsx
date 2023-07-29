@@ -1,10 +1,8 @@
-import React from "react";
-import { authentication } from "@microsoft/teams-js";
-import { combine } from "@pnp/core";
-import { MouseEvent, useEffect, useState, useContext } from "react";
-import { useData } from "@microsoft/teamsfx-react";
+import React, { useEffect, useState, useContext, useRef } from "react";
+import { dialog } from "@microsoft/teams-js";
+import { combine, getGUID } from "@pnp/core";
 import { TeamsFxContext } from "./Context";
-import { TeamsUserCredential } from "@microsoft/teamsfx";
+import { BearerTokenAuthProvider, createApiClient } from "@microsoft/teamsfx";
 
 /**
  * These could be passed in to PickerDialog as props, or otherwise made dynamic. For
@@ -19,8 +17,8 @@ const params = {
     },
     authentication: {},
     messaging: {
-        origin: "http://localhost:53000",
-        channelId: "27"
+        origin: "https://localhost:53000",
+        channelId: getGUID(),
     },
     typesAndSources: {
         mode: "files",
@@ -32,15 +30,15 @@ const params = {
 }
 
 // For this sample we hard code it, you can get it various ways in your application
-const baseUrl = "https://318studios-my.sharepoint.com";
+const baseUrl = "https://{tenant}-my.sharepoint.com";
 
-export function PickerDialog() {
+export interface PickerDialogProps {
+    host: Window;
+}
+
+export function PickerDialog(props: PickerDialogProps) {
 
     const [contentWindow, setContentWindow] = useState<Window | null>(null);
-
-    // const submit = () => {
-    //     dialog.url.submit("hello");
-    // }
 
     const { teamsUserCredential } = useContext(TeamsFxContext);
 
@@ -59,11 +57,113 @@ export function PickerDialog() {
                 filePicker: JSON.stringify(params),
             });
 
+            const functionName = process.env.REACT_APP_FUNC_NAME;
+            const functionEndpoint = process.env.REACT_APP_FUNC_ENDPOINT;
+            const apiClient = createApiClient(`${functionEndpoint}/api/`, new BearerTokenAuthProvider(async () => (await teamsUserCredential.getToken(""))!.token));
             const url = combine(baseUrl, `_layouts/15/FilePicker.aspx?${queryString}`);
+
+            contentWindow.parent.addEventListener("message", (event) => {
+
+                if (event.source && event.source === contentWindow) {
+
+                    const message = event.data;
+
+                    if (message.type === "initialize" && message.channelId === params.messaging.channelId) {
+
+                        const port = event.ports[0];
+
+                        port.addEventListener("message", async (message: any) => {
+
+                            console.log("message" + JSON.stringify(message));
+
+                            switch (message.data.type) {
+
+                                case "notification":
+                                    console.log(`notification: ${message.data}`);
+                                    break;
+
+                                case "command":
+
+                                    port.postMessage({
+                                        type: "acknowledge",
+                                        id: message.data.id,
+                                    });
+
+                                    const command = message.data.data;
+
+                                    switch (command.command) {
+
+                                        case "authenticate":
+
+                                            const { data: token2 } = await apiClient.get(`${functionName}?resource=${command.resource}`);
+
+                                            if (typeof token2 !== "undefined" && token2 !== null) {
+
+                                                port.postMessage({
+                                                    type: "result",
+                                                    id: message.data.id,
+                                                    data: {
+                                                        result: "token",
+                                                        token: token2,
+                                                    }
+                                                });
+
+                                            } else {
+                                                console.error(`Could not get auth token for command: ${JSON.stringify(command)}`);
+                                            }
+
+                                            break;
+
+                                        case "close":
+
+                                            dialog.url.submit("");
+                                            break;
+
+                                        case "pick":
+
+                                            port.postMessage({
+                                                type: "result",
+                                                id: message.data.id,
+                                                data: {
+                                                    result: "success",
+                                                },
+                                            });
+
+                                            dialog.url.submit(JSON.stringify(command));
+
+                                            break;
+
+                                        default:
+
+                                            console.warn(`Unsupported command: ${JSON.stringify(command)}`, 2);
+
+                                            port.postMessage({
+                                                result: "error",
+                                                error: {
+                                                    code: "unsupportedCommand",
+                                                    message: command.command
+                                                },
+                                                isExpected: true,
+                                            });
+                                            break;
+                                    }
+
+                                    break;
+                            }
+                        });
+
+                        port.start();
+
+                        port.postMessage({
+                            type: "activate",
+                        });
+                    }
+                }
+            });
 
             (async () => {
 
-                const { token } = await teamsUserCredential.getToken([]);
+                const { data: token } = await apiClient.get(`${functionName}?resource=${baseUrl}`);
 
                 const form = contentWindow.document.createElement("form");
                 form.setAttribute("action", url);
@@ -77,7 +177,6 @@ export function PickerDialog() {
                 form.appendChild(input);
 
                 form.submit();
-
             })();
         }
 
@@ -86,7 +185,7 @@ export function PickerDialog() {
     return (<div>
         <h1>Picker Render</h1>
 
-        <iframe title="File Picker" id="frame"></iframe>
+        <iframe title="File Picker" id="frame" width="100%" height="100%" sandbox="allow-same-origin allow-top-navigation allow-forms allow-scripts"></iframe>
 
     </div>);
 }
