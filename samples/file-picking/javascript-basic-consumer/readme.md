@@ -7,10 +7,10 @@ A single page example showing full interaction with the picker through plain Jav
 |name|descriptions|
 |---|---|
 |authority|https://login.microsoftonline.com/consumers|
-|Scope|OneDrive.ReadWrite or OneDrive.Read|
+|Scope|OneDrive.ReadWrite or OneDrive.ReadOnly|
 |baseUrl|https://onedrive.live.com/picker|
 
-> When you request a token you will use the `OneDrive.Read` or `OneDrive.ReadWrite` when you request the token. When you request the permissions for your application you will select for `Files.Read` or `Files.ReadWrite` (or another Files.X scope).
+> When you request a token you will use the `OneDrive.ReadOnly` or `OneDrive.ReadWrite` when you request the token. When you request the permissions for your application you will select for `Files.Read` or `Files.ReadWrite` (or another Files.X scope).
 
 
 ## Getting Started
