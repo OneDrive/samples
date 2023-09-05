@@ -1,0 +1,24 @@
+{
+  "sdk": "8.0",
+  "entry": {
+    "sharePoint": {
+      "byPath": {
+        "web": "https://{tenant}.sharepoint.com/sites/{site-name}",
+        "list": "Shared Documents",
+        "folder": "test-folder/tom's files"
+      }
+    }
+  },
+  "authentication": {},
+  "messaging": {
+    "origin": "http://localhost:3000",
+    "channelId": "27"
+  },
+  "typesAndSources": {
+    "mode": "all",
+    "pivots": {
+      "oneDrive": true,
+      "recent": true,
+    }
+  }
+}
