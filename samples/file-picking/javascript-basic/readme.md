@@ -4,7 +4,7 @@ A single page example showing full interaction with the picker through plain Jav
 
 ## Getting Started
 
-1. Follow the guidance in the [root readme](../README.md#required-setup) for setting up the AAD application
+1. Follow the guidance in the [root readme](../readme.md#required-setup) for setting up the AAD application
 2. Update the `baseUrl` value in index.html with a valid absolute URL to either the SharePoint or OneDrive instance the picker should surface.
 3. Update the `msalParams` value in [scripts/auth.js](./scripts/auth.js) with valid configuration including authority and clientId
 
