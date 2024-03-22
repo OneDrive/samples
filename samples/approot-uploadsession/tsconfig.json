@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "module": "NodeNext",
+        "target": "ESNext",
+        "rootDir": "./src",
+        "outDir": "./build",
+        "moduleResolution": "NodeNext",
+        "skipLibCheck": true,
+        "lib": [
+            "ES2015",
+            "dom",
+            "ES2017.Object",
+        ]
+    },
+    "include": [
+        "./src/**/*.ts"
+    ]
+}
