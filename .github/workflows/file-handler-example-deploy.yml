@@ -34,12 +34,12 @@ jobs:
       run:
         working-directory: samples/file-handler
     steps:
-    - uses: azure/login@v1
+    - uses: azure/login@cb79c773a3cfa27f31f25eb3f677781210c9ce3d # v1.6.1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2.8.0
     - name: Use Node.js ${{ env.NODE_VERSION }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@f1f314fca9dfce2769ece7d933488f076716723e # v1.4.6
       with:
         node-version: ${{ env.NODE_VERSION }}
     - name: Create ${{ env.ENV_FILE_NAME }} file
@@ -59,7 +59,7 @@ jobs:
         find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
         npm install
     - name: 'Deploy to Azure WebApp'
-      uses: azure/webapps-deploy@v2
+      uses: azure/webapps-deploy@5cfb776471c748b351e1ebf5770e208a54ace016 # v2.2.19
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
